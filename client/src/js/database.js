@@ -1,6 +1,6 @@
 import { openDB } from 'idb';
 
-const initdb = async () =>
+const initDb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
@@ -12,7 +12,7 @@ const initdb = async () =>
     },
   });
 
-// Add logic to a method that accepts some content and adds it to the database
+
 export const putDb = async (content) => {
   console.log('Put to the database');
 
@@ -27,7 +27,6 @@ export const putDb = async (content) => {
   return result;
 }
 
-// Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   console.log('GET from the database');
 
@@ -41,4 +40,4 @@ export const getDb = async () => {
   return result?.value;
 }
 
-initdb();
+initDb();
